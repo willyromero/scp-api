@@ -27,7 +27,7 @@ SCRAP_URL=""
 SECRET_KEY=
 ```
 
-**Nota:** `DEV_SERVER_NAME` y `SERVER_NAME` usan el siguiente formato `0.0.0.0:Port`.
+**Nota:** `DEV_SERVER_NAME` y `SERVER_NAME` usan el siguiente formato `0.0.0.0:Port`. `DEFAULT_TIMEOUT` acepta únicamente valores numéricos (segundos de espera) o none (sin límite de espera).
 
 Puede usar el siguiente comando para generar una nueva SECRET_KEY.
 
@@ -89,7 +89,25 @@ python .\src\app.py
 python src/app.py
 ```
 
-### **5. Despliegue básico.**
+### **5. Endpoints.**
+
+---
+
+Vamos a suponer que esta haciendo pruebas locales para lo cual establece la variable `DEV_SERVER_NAME` en el archivo .env como `127.0.0.1:4000`.
+
+Puede usar dos endpints:
+
+- http://127.0.0.1:4000/scp/api/{cedula}/{secret_key}
+  Descripción:
+  --cedula: es el número de CI de la persona que se desea optener los datos.
+  --secret_key: es la variable `SECRET_KEY` del archivo .env.
+  Este endpoint hace uso de la variable `DEFAULT_TIMEOUT` en el archivo .env.
+
+- http://127.0.0.1:4000/scp/api/{cedula}/{secret_key}/{timeout}
+  Descripción:
+  --timeout: es el tiempo de espera usado para la consulta, tiene las mismas características de `DEFAULT_TIMEOUT` del archivo .env.
+
+### **6. Despliegue básico.**
 
 ---
 
