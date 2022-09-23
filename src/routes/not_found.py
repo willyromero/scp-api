@@ -1,2 +1,5 @@
+from flask import render_template
+
+
 def page(err):
-    return "<h1>404 Page Not Found</h1>", 404
+    return render_template("not_found_page.html"), 404

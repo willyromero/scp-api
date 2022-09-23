@@ -1,4 +1,4 @@
-# **SRI API.**
+# **SCP API.**
 
 ## 📘 **Documentación.**
 
@@ -26,6 +26,8 @@ SECRET_KEY=
 ```
 
 **Nota:** DEV_SERVER_NAME y DEV_SERVER_NAME usan el siguiente formato `0.0.0.0:Port`
+
+**`Importante:`** Cada vez que cambie los valores del archivo .env debe obligatoriamente reiniciar el servidor.
 
 Puede usar el siguiente comando para generar una nueva SECRET_KEY.
 
