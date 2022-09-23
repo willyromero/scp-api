@@ -9,10 +9,10 @@
 Cree un archivo .env en la raíz del proyecto con nombre .env y añada lo siguiente.
 
 ```.env
-# ip y puerto del servidor (desarrollo) 
+# ip y puerto del servidor (desarrollo)
 DEV_SERVER_NAME=""
 
-# ip y puerto del servidor (producción) 
+# ip y puerto del servidor (producción)
 SERVER_NAME=""
 
 SESSION_COOKIE_DOMAIN=False
@@ -26,15 +26,15 @@ SCRAP_URL=""
 SECRET_KEY=
 ```
 
-**Nota:** DEV_SERVER_NAME y DEV_SERVER_NAME usan el siguiente formato `0.0.0.0:Port`
-
-**`Importante:`** Cada vez que cambie los valores del archivo .env debe obligatoriamente reiniciar el servidor.
+**Nota:** `DEV_SERVER_NAME` y `SERVER_NAME` usan el siguiente formato `0.0.0.0:Port`.
 
 Puede usar el siguiente comando para generar una nueva SECRET_KEY.
 
 ```powershell
 python -c 'import secrets; print(secrets.token_hex())'
 ```
+
+**`Importante:`** Cada vez que cambie los valores del archivo .env debe obligatoriamente reiniciar el servidor.
 
 ### **2. Entorno virtual.**
 
@@ -86,4 +86,18 @@ python .\src\app.py
 
 ```bash
 python src/app.py
+```
+
+### **5. Despliegue básico.**
+
+---
+
+En el archivo app.py cambie la configuración cambie el parametro de configuración de la aplicación de `"config.DevelopmentConfig"` a `"config.ProductionConfig"`. El resultado debe ser como se muestra en el siguiente ejemplo.
+
+```
+... something above ...
+
+app.config.from_object("config.ProductionConfig")
+
+... something below ..
 ```
