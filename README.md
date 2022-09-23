@@ -9,19 +9,20 @@
 "Cree un archivo .env en la raíz del proyecto con nombre .env y añada lo siguiente.
 
 ```.env
-
-# localhost server
+# ip y puerto del servidor (desarrollo) 
 DEV_SERVER_NAME=""
 
-# production server
+# ip y puerto del servidor (producción) 
 SERVER_NAME=""
 
-TIMEOUT=
+SESSION_COOKIE_DOMAIN=False
 
-# url for scraping
+DEFAULT_TIMEOUT=
+
+# url para el robot (scraping)
 SCRAP_URL=""
 
-# endpoints
+# clave secreta para usar la api
 SECRET_KEY=
 ```
 
