@@ -17,6 +17,7 @@ SERVER_NAME=""
 
 SESSION_COOKIE_DOMAIN=False
 
+# default timeout a usar si no se establece el parametro timeout en la consulta
 DEFAULT_TIMEOUT=
 
 # url para el robot (scraping)
