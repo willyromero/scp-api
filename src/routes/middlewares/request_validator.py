@@ -1,5 +1,3 @@
-from distutils.command.config import config
-import imp
 from flask import current_app
 
 

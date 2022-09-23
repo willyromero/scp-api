@@ -1,6 +1,3 @@
-import imp
-import re
-from time import time
 from controllers import person_controller
 from flask import Blueprint, current_app
 from .middlewares import request_validator
