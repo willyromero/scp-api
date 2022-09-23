@@ -98,14 +98,16 @@ Vamos a suponer que esta haciendo pruebas locales para lo cual establece la vari
 Puede usar dos endpints:
 
 - http://127.0.0.1:4000/scp/api/{cedula}/{secret_key}
+
   Descripción:
-  --cedula: es el número de CI de la persona que se desea optener los datos.
-  --secret_key: es la variable `SECRET_KEY` del archivo .env.
+  - **cedula**: es el número de CI de la persona que se desea optener los datos.
+  - **secret_key**: es la variable `SECRET_KEY` del archivo .env.
   Este endpoint hace uso de la variable `DEFAULT_TIMEOUT` en el archivo .env.
 
 - http://127.0.0.1:4000/scp/api/{cedula}/{secret_key}/{timeout}
+
   Descripción:
-  --timeout: es el tiempo de espera usado para la consulta, tiene las mismas características de `DEFAULT_TIMEOUT` del archivo .env.
+  - **timeout**: es el tiempo de espera usado para la consulta, tiene las mismas características de `DEFAULT_TIMEOUT` del archivo .env.
 
 ### **6. Despliegue básico.**
 
