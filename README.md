@@ -6,7 +6,7 @@
 
 ---
 
-"Cree un archivo .env en la raíz del proyecto con nombre .env y añada lo siguiente.
+Cree un archivo .env en la raíz del proyecto con nombre .env y añada lo siguiente.
 
 ```.env
 # ip y puerto del servidor (desarrollo) 
