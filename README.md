@@ -27,7 +27,7 @@ SCRAP_URL=""
 SECRET_KEY=
 ```
 
-**Nota:** `DEV_SERVER_NAME` y `SERVER_NAME` usan el siguiente formato `0.0.0.0:Port`. `DEFAULT_TIMEOUT` acepta únicamente valores numéricos (segundos de espera) o none (sin límite de espera).
+**Nota:** `DEV_SERVER_NAME` y `SERVER_NAME` usan el siguiente formato `0.0.0.0:Port`. `DEFAULT_TIMEOUT` acepta únicamente valores numéricos enteros (segundos de espera) o none (sin límite de espera).
 
 Puede usar el siguiente comando para generar una nueva SECRET_KEY.
 
