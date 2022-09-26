@@ -10,7 +10,7 @@ if __name__ == "__main__":
     app.config.from_object("config.DevelopmentConfig")
 
     # Blueprints
-    app.register_blueprint(home.main, url_prefix="/scp/api")
+    app.register_blueprint(home.main, url_prefix="/")
     app.register_blueprint(person.main, url_prefix="/scp/api")
 
     # error page

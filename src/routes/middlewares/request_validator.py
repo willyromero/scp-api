@@ -11,8 +11,12 @@ def int_or_none(value):
         return value
 
 
-def password(pas):
+def check_permission(key):
+    
     try:
-        return True if pas == current_app.config["SECRET_KEY"] else False
+        if current_app.config.get("SECRET_KEY") == key:
+            return True
+        else:
+            return False
     except:
         return False
