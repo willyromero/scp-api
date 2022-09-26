@@ -1,5 +1,5 @@
-from classes.SecapScraper import SecapScraper
-from classes.Cleaner import Cleaner
+from services.SecapScraper import SecapScraper
+from services.Cleaner import Cleaner
 from flask import current_app
 
 
