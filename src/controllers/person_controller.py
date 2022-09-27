@@ -15,12 +15,22 @@ def get_person_data(param, to):
         scraper.extract_web_content()
         web_content = scraper.get_web_content()
 
-        # Transform person data
-        cleaner = Cleaner(web_content)
-        cleaner.parse_list_content()
-        cleaner.clean_list("latin-1")
-        cleaner.make_person_dictionary()
+        print("suc", web_content["success"])
+        if web_content["success"]:
+            # Transform person data
+            cleaner = Cleaner(web_content["request_text"])
+            cleaner.parse_list_content()
+            cleaner.clean_list("latin-1")
+            cleaner.make_person_dictionary()
 
-        return cleaner.get_person_dictionary()
-    except Exception:
-        return {"status": "FAILED", "data": {"error": "Cannot get person data"}}
+            return cleaner.get_person_dictionary()
+        else:
+            return {
+                "status": "FAILED",
+                "data": {"error": "Timeout is over, cannot get data from request"}
+            }
+    except:
+        return {
+            "status": "FAILED",
+            "data": {"error": "Cannot get person data"}
+        }

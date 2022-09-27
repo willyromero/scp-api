@@ -61,5 +61,7 @@ class Cleaner:
             self.set_person_dictionary(person_dic)
             print("person", person_dic)
         except:
-            self.set_person_dictionary(
-                {"status": "FAILED", "data": {"error": "There was an error formatting the person data"}})
+            self.set_person_dictionary({
+                "status": "FAILED",
+                "data": {"error": "There was an error formatting the person data"}
+            })

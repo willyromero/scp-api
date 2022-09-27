@@ -29,7 +29,11 @@ class SecapScraper:
 
     def extract_web_content(self):
         try:
-            self.set_web_content(requests.get(
-                self.get_url(), verify=False, timeout=(self.get_timeout())).text)
+            request_text = requests.get(
+                self.get_url(), verify=False, timeout=(self.get_timeout())).text
+            request_response = {"success": True, "request_text": request_text}
+            
+            self.set_web_content(request_response)
         except:
-            self.set_web_content({})
+            request_response = {"success": False}
+            self.set_web_content(request_response)

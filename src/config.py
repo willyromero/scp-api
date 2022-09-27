@@ -6,6 +6,7 @@ class BaseConfig(object):
     SECRET_KEY = config("SECRET_KEY")
     SCRAP_URL = config("SCRAP_URL")
     DEFAULT_TIMEOUT = config("DEFAULT_TIMEOUT")
+    SESSION_COOKIE_DOMAIN = config("SESSION_COOKIE_DOMAIN")
 
 
 class DevelopmentConfig(BaseConfig):
