@@ -15,7 +15,6 @@ def get_person_data(param, to):
         scraper.extract_web_content()
         web_content = scraper.get_web_content()
 
-        print("suc", web_content["success"])
         if web_content["success"]:
             # Transform person data
             cleaner = Cleaner(web_content["request_text"])

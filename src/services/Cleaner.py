@@ -59,7 +59,6 @@ class Cleaner:
             person_dic["consulted-at"] = self.get_list()[17]
 
             self.set_person_dictionary(person_dic)
-            print("person", person_dic)
         except:
             self.set_person_dictionary({
                 "status": "FAILED",
