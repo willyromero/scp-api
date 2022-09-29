@@ -1,6 +1,3 @@
-from flask import render_template
-
-
 def page(err):
     response = {
         "status": "FAILED",
