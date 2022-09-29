@@ -1,7 +1,8 @@
+from email import message
 from services.SecapScraper import SecapScraper
 from services.Cleaner import Cleaner
 from flask import current_app
-
+import json
 
 # controller to get person data
 def get_person_data(param, to):
@@ -15,6 +16,7 @@ def get_person_data(param, to):
         scraper.extract_web_content()
         web_content = scraper.get_web_content()
 
+        print("suc", web_content)
         if web_content["success"]:
             # Transform person data
             cleaner = Cleaner(web_content["request_text"])

@@ -1,5 +1,9 @@
 import requests
 import urllib3
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
 
 urllib3.disable_warnings()
 
@@ -29,11 +33,26 @@ class SecapScraper:
 
     def extract_web_content(self):
         try:
-            request_text = requests.get(
-                self.get_url(), verify=False, timeout=(self.get_timeout())).text
+            # session = requests.Session()
+            # # session.verify = "C:\\Users\\wrom\\Downloads\\_.secap.gob.ec.crt"
+            # retry = Retry(connect=3, backoff_factor=0.5)
+            # adapter = HTTPAdapter(max_retries=retry)
+            # session.mount('http://', adapter)
+            # session.mount('https://', adapter)
+            # resp = session.get(self.get_url())
+
+
+            # s = requests.Session()
+            
+            print("request", requests.get(url=self.get_url(), verify="C:\\Users\\wrom\\Downloads\\1_.secap.gob.ec.crt").text)
+
+            # request_text = requests.get(
+                # self.get_url(), timeout=(self.get_timeout()), verify="C:\\Users\\wrom\\Downloads\\_.secap.gob.ec.crt").text
+
+            request_text = requests.get(url=self.get_url(), verify="C:\\Users\\wrom\\Downloads\\1_.secap.gob.ec.crt").text 
             request_response = {"success": True, "request_text": request_text}
             
             self.set_web_content(request_response)
-        except:
-            request_response = {"success": False}
+        except Exception as err:
+            request_response = {"success": False,  "mensaje": err.args}
             self.set_web_content(request_response)
