@@ -180,6 +180,6 @@ Siga los pasos a continuacion para descargar el certificado ssl del sitio.
 
 ---
 
-Una vez haya descargado el certificado ubíquelo en la carpeta **`cert`** (dentro de src/services/cert) y pegue el certificado.
+Una vez haya descargado el certificado ubíquelo en la carpeta **`cert`** (la ruta es src/services/cert) y pegue el certificado.
 
-**Nota:** la api hace uso del primer archivo `.cert` ubicado en la carbeta `cert`. Es preferible tener un único certificado en esa carpeta.
+**Nota:** la api hace uso del primer archivo `.cert` ubicado en la carpeta `cert`. Es preferible tener un único certificado en esa carpeta.
