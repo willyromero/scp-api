@@ -33,12 +33,9 @@ class SecapScraper:
     def extract_web_content(self):
         try:          
             # path access for local ssl certificate of url
-            curret_path = Path(__file__).parent.resolve()
-            # certificate_path = curret_path / "cert" / "_.secap.gob.ec.crt"
+            curret_path = Path(__file__).parent.resolve() 
             cert_path = curret_path / "cert"
-            
             certificate_path = glob.glob(f"{cert_path}/*.crt")[0]
-            # certificate_path = curret_path / "cert" / list(curret_path.glob("**/*.crt"))[1]
 
             request_text = requests.get(
                 url=self.get_url(), 
@@ -46,9 +43,9 @@ class SecapScraper:
                 verify=certificate_path
             ).text 
             
-            request_response = {"success": True, "request_text": request_text}
+            request_response = {"success": True, "message": request_text}
             
             self.set_web_content(request_response)
         except Exception as err:
-            request_response = {"success": False,  "mensaje": err.args}
+            request_response = {"success": False,  "message": err.args}
             self.set_web_content(request_response)
