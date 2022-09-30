@@ -148,6 +148,38 @@ app.config.from_object("config.ProductionConfig")
 ... something below ..
 ```
 
-```
+# **Descargar certificado ssl.**
 
-```
+Siga los pasos a continuacion para descargar el certificado ssl del sitio.
+
+## Paso 1.
+
+---
+
+![Paso 1](./img/step_1.png)
+
+## Paso 2.
+
+---
+
+![Paso 2](./img/step_2.png)
+
+## Paso 3.
+
+---
+
+![Paso 3](./img/step_3.png)
+
+## Paso 4.
+
+---
+
+![Paso 4](./img/step_4.png)
+
+## Paso 5.
+
+---
+
+Una vez haya descargado el certificado ubíquelo en la carpeta **`cert`** (dentro de src/services/cert) y pegue el certificado.
+
+**Nota:** la api hace uso del primer archivo `.cert` ubicado en la carbeta `cert`. Es preferible tener un único certificado en esa carpeta.
